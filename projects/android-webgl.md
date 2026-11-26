@@ -28,7 +28,7 @@ Android OpenGL ES coursework normally runs only on a phone or an emulator, so a 
 
 ## What I Tested
 
-- The **Android**, **Desktop** (Ubuntu + Windows) and **GitHub Pages** workflows on every push. There have been 39 workflow runs in total.
+- The **Android**, **Desktop** (Ubuntu + Windows) and **GitHub Pages** workflows on every push. There were 39 workflow runs before the repository was recreated on 27 Nov 2026 with the same commit history; that earlier Actions run history is no longer visible.
 - All three live demos and the landing page in the browser on 26 Nov 2026. Each one loads, creates a WebGL 2.0 (OpenGL ES 3.0) context and renders, with no console errors.
 
 ## What Failed
