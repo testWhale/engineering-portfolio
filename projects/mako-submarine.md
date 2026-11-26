@@ -58,6 +58,8 @@ The pilot of a human-powered submarine is underwater and pedalling, with very li
 
 - The MAKO team placed **3rd at eISR 2026** in Best Run, Best Speed and Best Time. This is a whole-team result.
 - The dashboard prototype is public with verified setup instructions: [testWhale/SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard).
+- I verified the Flask server, the frontend asset delivery and the CSV-to-JSON processing utility.
+- I documented the prototype's hardware integration requirements and its remaining limitations.
 - The upstream detection project is kept as a credited **research reference** ([testWhale/Real-Time-Object-Detection-using-YOLO11](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11)). It contains no code of mine.
 
 ## Technologies

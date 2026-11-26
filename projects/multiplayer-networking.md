@@ -90,7 +90,6 @@ The earlier groundwork is still what keeps play responsive on bad links: client-
 - **Test pass results are not recorded on GitHub.** The repository has no CI, and pull request #75 shows no checks, so I don't cite a pass result here.
 - **Network performance (simulated impairment):** up to 4 concurrent players on a server-authoritative model, validated across 7 network profiles. At roughly **548 ms RTT** under the harsh profile, local movement stayed predicted and stable at about **18 snapshots per second**, with 0 reconciliation corrections shown on the diagnostics HUD.
 - A dedicated server build runs on **Linux** under **systemd**.
-- The corrected implementation allowed Dash movement to remain consistent with authoritative server state, preventing reconciliation from incorrectly reversing accepted spell-induced movement.
 
 These results come from **simulated** network impairment in a studio project. They are not production-scale load testing.
 
