@@ -4,7 +4,7 @@
 
 ## Overview
 
-MAKO is Singapore's and Southeast Asia's first human-powered submarine. I was the team's lead developer (submarine) and worked on its mechanical and electrical design. My software contributions were the pilot-facing telemetry dashboard and a computer-vision pipeline for finding underwater gates.
+MAKO is Singapore's and Southeast Asia's first human-powered submarine. I was the team's lead developer (submarine) and worked on its mechanical and electrical design. My software contributions were pilot-facing telemetry, published here as a browser dashboard prototype with simulated inputs, and line/gate detection for underwater navigation, which is not published.
 
 ## Demonstration
 
@@ -14,16 +14,18 @@ MAKO is Singapore's and Southeast Asia's first human-powered submarine. I was th
 
 ## My role and contributions
 
-**My work**
+**My work: published prototype**
 
-- Built a real-time telemetry GUI for inside the submarine. It translates raw sensor data from a 9-axis IMU (MPU-9250), a depth and pressure sensor (MS5837-30BA) and an RPM sensor into information the pilot can use.
-- Built the dashboard software: a Flask server and a Three.js 3D view that shows the submarine's yaw, pitch and roll, with separate IMU and depth panels.
-- Adapted an existing open-source YOLO11 + OpenCV object-detection pipeline to detect lines, so the submarine could identify and navigate through underwater gates, and ran practical tests with it.
+- Built [SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard), a browser-based telemetry dashboard **prototype** in Python, Flask and Three.js. It shows the submarine's yaw, pitch and roll on a 3D model, with separate IMU and depth panels. In the published code, these values come from **simulated on-screen inputs**; live sensor ingestion is not included.
 
-**Team results** (shared with the whole MAKO team)
+**My work in the wider MAKO system (not published)**
+
+- Worked on the pilot telemetry GUI used inside the submarine, which translates raw data from a 9-axis IMU (MPU-9250), a depth and pressure sensor (MS5837-30BA) and an RPM sensor into pilot information. The hardware ingestion code is not in a public repository.
+- Extended an existing open-source YOLO11 + OpenCV detection pipeline to detect lines, for identifying and navigating through underwater gates, and ran practical tests with it. These modifications are not published; the public fork contains only the upstream author's code.
+
+**Team results** (achieved by the whole MAKO team, not by any single software component)
 
 - 3rd place at **eISR 2026** in Best Run, Best Speed and Best Time.
-- A **33% improvement over 2025**.
 
 ## Problem
 
@@ -38,30 +40,25 @@ The pilot of a human-powered submarine is underwater and pedalling, with very li
 
 ## What I Tested
 
-- The telemetry GUI with the MAKO sensor hardware (MPU-9250, MS5837-30BA, RPM sensor).
-- Locally, the published dashboard code: the Flask server serves the page, the JavaScript and the 3D models, and the CSV replay utility converts logged time/speed data to JSON.
-- In practical sessions, the OpenCV-based detection pipeline for identifying and navigating through underwater gates.
+- **Wider MAKO system (not published):** the telemetry GUI with the MAKO sensor hardware (MPU-9250, MS5837-30BA, RPM sensor), and, in practical sessions, the line/gate detection pipeline.
+- **Published prototype:** I ran the dashboard code locally. The Flask server serves the page, the JavaScript and the 3D models, and the standalone CSV utility converts logged time/speed data to JSON.
 
 ## What Failed
 
-- **The off-the-shelf detector could not find gates.** The starting pipeline ([yuvarajpanditrathod/Real-Time-Object-Detection-using-YOLO11](https://github.com/yuvarajpanditrathod/Real-Time-Object-Detection-using-YOLO11)) uses pretrained YOLO11 models for general object detection from webcam, image and video. Those models have no class for pool lines or gates.
-- **The published dashboard version is not wired to live sensors.** In the code in the public repository, orientation and depth come from on-screen controls. A placeholder car model stands in for the submarine because the submarine model is in USDZ format, which the Three.js GLTFLoader cannot load.
+- **The off-the-shelf detector could not find gates.** The starting pipeline ([yuvarajpanditrathod/Real-Time-Object-Detection-using-YOLO11](https://github.com/yuvarajpanditrathod/Real-Time-Object-Detection-using-YOLO11)) uses pretrained YOLO11 models for general object detection. Those models have no class for pool lines or gates.
+- **The published dashboard prototype is not a complete telemetry system.** Its inputs are simulated on-screen controls. A placeholder car model stands in for the submarine, because the submarine model is in USDZ format, which the Three.js GLTFLoader cannot load.
 
 ## What I Changed
 
-- Extended the detection pipeline to detect **lines**, so the submarine could identify and navigate through gates.
-- Built the dashboard around separate IMU and depth panels, and a 3D model whose rotation follows yaw, pitch and roll (applied in YXZ order).
-- Documented the dashboard's remaining gaps openly in its README: no live sensor link, a placeholder model, a missing depth readout and no RPM panel.
+- Extended the detection pipeline to detect **lines**, so the submarine could identify and navigate through gates. These changes are not published, and no accuracy or speed figures are claimed.
+- Built the dashboard prototype around separate IMU and depth panels, and a 3D model whose rotation follows yaw, pitch and roll (applied in YXZ order).
+- Listed the prototype's limitations openly in its README: simulated inputs, a placeholder model, a static connection label, no dedicated depth readout, no RPM panel, a standalone CSV utility, and a development-only server configuration.
 
 ## What Happened
 
-- Developed a pilot-facing dashboard prototype for visualising vessel orientation and sensor values.
-- Verified the Flask server, frontend asset delivery and CSV-to-JSON data processing utility.
-- Documented the prototype's hardware integration requirements and remaining limitations.
-- Published the dashboard implementation with reproducible setup instructions.
-- The team placed **3rd at eISR 2026** in Best Run, Best Speed and Best Time.
-- The dashboard is public with verified setup instructions: [testWhale/SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard).
-- The detection pipeline is a credited public fork: [testWhale/Real-Time-Object-Detection-using-YOLO11](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11). My line/gate changes are not yet committed there, and no detection-accuracy or speed figures are claimed.
+- The MAKO team placed **3rd at eISR 2026** in Best Run, Best Speed and Best Time. This is a whole-team result.
+- The dashboard prototype is public with verified setup instructions: [testWhale/SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard).
+- The upstream detection project is kept as a credited **research reference** ([testWhale/Real-Time-Object-Detection-using-YOLO11](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11)). It contains no code of mine.
 
 ## Technologies
 
@@ -71,14 +68,14 @@ Python, Flask, JavaScript, Three.js, lil-gui, glTF, Ultralytics YOLO11, OpenCV, 
 
 - Photo of the sensor bench prototype (see [Demonstration](#demonstration))
 - [SubmarineDashboard repository](https://github.com/testWhale/SubmarineDashboard): source, architecture, setup verification and known limitations
-- [YOLO11 fork with MAKO notice](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11): credited upstream project and a description of the MAKO adaptation
+- [YOLO11 upstream fork](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11): research reference only, with the upstream author's code and attribution and none of my modifications
 
 ## Source availability
 
 | Component | Availability |
 |---|---|
-| Telemetry dashboard | Public, [testWhale/SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard) |
-| Gate-detection pipeline | Public fork of a third-party project; my line-detection changes are not yet published |
+| Telemetry dashboard prototype (simulated inputs) | Public, [testWhale/SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard) |
+| Line/gate-detection modifications | Not published; the public fork is the upstream project only |
 | Sensor ingestion / firmware | Not published |
 
 [← Back to portfolio](../README.md)

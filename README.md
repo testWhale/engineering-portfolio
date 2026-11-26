@@ -16,7 +16,7 @@ My engineering interests are C++ software development, computer networking, back
 
 **Flagship project.** In a DigiPen studio team, I worked on a custom C++ engine targeting Windows and Android, with server-authoritative multiplayer for up to 4 players and a dedicated server on Linux (systemd).
 
-My work covered real-time snapshot synchronisation, client-side prediction, server reconciliation, remote entity interpolation, an in-engine network diagnostics HUD, and automated testing. I validated it across 7 simulated network profiles. Under the harshest profile (about 548 ms RTT), local movement stayed predicted and stable at about 18 snapshots per second.
+My work covered real-time snapshot synchronisation, client-side prediction, server reconciliation, remote entity interpolation, an in-engine network diagnostics HUD, and automated testing. I validated it across 7 simulated network profiles. Under the harshest profile (about 548 ms RTT), local movement stayed predicted and stable at about 18 snapshots per second. I also traced and fixed a Dash spell rubber-banding bug, where the server had never applied the spell's movement, and added regression tests for it.
 
 <a href="projects/multiplayer-networking.md#demonstration"><img src="media/network-diagnostics-normal-vs-harsh.jpg" alt="Network diagnostics HUD: normal profile vs harsh profile (548 ms RTT)" width="520"></a>
 
@@ -28,10 +28,10 @@ My work covered real-time snapshot synchronisation, client-side prediction, serv
 
 **Engineering under physical and hardware constraints.** MAKO is Singapore's and Southeast Asia's first human-powered submarine. I was the team's lead developer (submarine).
 
-I built a real-time telemetry GUI for the pilot, fed by an MPU-9250 IMU, an MS5837-30BA depth sensor and an RPM sensor. I also adapted a YOLO11 + OpenCV pipeline to detect lines so the submarine could find underwater gates. The team placed 3rd at eISR 2026 in Best Run, Best Speed and Best Time, with a 33% improvement over 2025.
+I worked on pilot telemetry for the submarine's MPU-9250 IMU, MS5837-30BA depth sensor and RPM sensor, and on line/gate detection for underwater navigation. The MAKO team placed 3rd at eISR 2026 in Best Run, Best Speed and Best Time.
 
-- [SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard): Flask + Three.js pilot dashboard
-- [Real-Time-Object-Detection-using-YOLO11 (fork)](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11): credited upstream detection pipeline used for MAKO
+- [SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard): my browser-based telemetry dashboard **prototype** (Python, Flask, Three.js). It uses simulated sensor inputs; live sensor ingestion is not included.
+- [Real-Time-Object-Detection-using-YOLO11 (upstream fork)](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11): research reference only. My line/gate modifications are not published.
 
 <a href="projects/mako-submarine.md#demonstration"><img src="media/mako-sensor-bench-prototype.jpg" alt="MAKO sensor bench prototype: Arduino Uno, sensor breakouts and LCD altitude readout" width="520"></a>
 
