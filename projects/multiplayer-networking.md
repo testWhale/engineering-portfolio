@@ -63,7 +63,11 @@ A real-time multiplayer game has to feel instant for the local player, while one
 
 ## What Failed
 
-Under the harshest simulated profile, the network itself degraded sharply. Round-trip time reached about **548 ms**, and snapshot delivery fell to about **18 per second**, from about 20 per second on a normal connection. Without prediction, every local input would wait more than half a second for the server's response, so a purely authoritative client would feel unresponsive on this link.
+During multiplayer development, introducing a Dash spell exposed an inconsistency between client-side prediction and authoritative server simulation.
+
+The local client applied the spell's movement immediately, but the server did not initially account for the corresponding movement. When the next authoritative state arrived, reconciliation corrected the player's position towards the previous server position, causing visible rubber-banding.
+
+This exposed a limitation in predicting gameplay actions beyond standard movement inputs: both the client and server must account for spell-induced movement consistently.
 
 ## What I Changed
 
