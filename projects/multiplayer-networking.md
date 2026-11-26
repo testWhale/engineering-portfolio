@@ -14,17 +14,23 @@ As part of a DigiPen studio team, I built a custom cross-platform C++ engine tar
 
 *Same build, two network profiles. Left: normal (RTT 21 ms, 0% packet loss, 20.0 snapshots/s). Right: harsh (RTT 548 ms, 13.3% down / 8.6% up packet loss, 17.9 snapshots/s). Reconciliation corrections are 0 in both.*
 
-| Normal network profile | Harsh network profile |
-|---|---|
-| [![Normal profile preview](../media/net-profile-normal-preview.gif)](../media/net-profile-normal.mp4) | [![Harsh profile preview](../media/net-profile-harsh-preview.gif)](../media/net-profile-harsh.mp4) |
-| [▶ Full video (29 s)](../media/net-profile-normal.mp4) | [▶ Full video (23 s)](../media/net-profile-harsh.mp4) |
+### Normal network profile
 
-| Dedicated server diagnostics + client | Client-side prediction |
-|---|---|
-| [![Server diagnostics preview](../media/server-diagnostics-preview.gif)](../media/server-diagnostics.mp4) | [![Prediction demo preview](../media/prediction-demo-preview.gif)](../media/prediction-demo.mp4) |
-| [▶ Full video (17 s)](../media/server-diagnostics.mp4) | [▶ Full video (30 s)](../media/prediction-demo.mp4) |
+https://github.com/user-attachments/assets/c882fcf0-1840-400a-bcf7-0f790ab21c82
+
+### Harsh network profile
+
+https://github.com/user-attachments/assets/2824216c-0e8a-4e37-9386-836244f38857
+
+### Dedicated server diagnostics with a connected client
+
+https://github.com/user-attachments/assets/32d81771-acf9-46d1-889a-ba7bd23b4079
 
 *The server diagnostics view shows the live process, workload counters and memory-safety checks (ASan / UBSan / LSan) alongside a connected client. Server port and host details are redacted.*
+
+### Client-side prediction
+
+https://github.com/user-attachments/assets/7ca2e993-24b4-4080-b733-42666b6ba95b
 
 ## My role and contributions
 
