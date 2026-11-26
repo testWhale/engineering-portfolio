@@ -8,6 +8,24 @@
 
 As part of a DigiPen studio team, I built a custom cross-platform C++ engine targeting Windows and Android, with server-authoritative multiplayer for up to four players and a dedicated server deployed on Linux. My focus was the networking layer and the tooling to prove that it held up under bad network conditions.
 
+## Demonstration
+
+![Network diagnostics HUD on two Android clients: normal profile (left, 21 ms RTT, 0% loss, 20.0 snapshots/s) and harsh profile (right, 548 ms RTT, 13.3% / 8.6% packet loss, 17.9 snapshots/s, 0 corrections)](../media/network-diagnostics-normal-vs-harsh.jpg)
+
+*Same build, two network profiles. Left: normal (RTT 21 ms, 0% packet loss, 20.0 snapshots/s). Right: harsh (RTT 548 ms, 13.3% down / 8.6% up packet loss, 17.9 snapshots/s). Reconciliation corrections are 0 in both.*
+
+| Normal network profile | Harsh network profile |
+|---|---|
+| [![Normal profile preview](../media/net-profile-normal-preview.gif)](../media/net-profile-normal.mp4) | [![Harsh profile preview](../media/net-profile-harsh-preview.gif)](../media/net-profile-harsh.mp4) |
+| [▶ Full video (29 s)](../media/net-profile-normal.mp4) | [▶ Full video (23 s)](../media/net-profile-harsh.mp4) |
+
+| Dedicated server diagnostics + client | Client-side prediction |
+|---|---|
+| [![Server diagnostics preview](../media/server-diagnostics-preview.gif)](../media/server-diagnostics.mp4) | [![Prediction demo preview](../media/prediction-demo-preview.gif)](../media/prediction-demo.mp4) |
+| [▶ Full video (17 s)](../media/server-diagnostics.mp4) | [▶ Full video (30 s)](../media/prediction-demo.mp4) |
+
+*The server diagnostics view shows the live process, workload counters and memory-safety checks (ASan / UBSan / LSan) alongside a connected client. Server port and host details are redacted.*
+
 ## My role and contributions
 
 - Technical leadership on the networking and server side of the engine
@@ -34,7 +52,7 @@ A real-time multiplayer game has to feel instant for the local player, while one
 
 - Gameplay across **seven simulated network impairment profiles**, from broadband and 4G to harsh high-latency conditions of up to **250 ms one-way latency with 10% packet loss**.
 - Live network behaviour, using the diagnostics HUD. In a recorded session on a normal connection, the HUD showed RTT of roughly 18–44 ms, 3–14 ms jitter, 0% packet loss, about 30 kbit/s down and 50 kbit/s up, and about 19–20 snapshots per second, with the client simulating at 60 Hz.
-- Automated tests for networking regressions, and memory-safety validation.
+- Automated tests for networking regressions, and memory-safety validation. In the recorded live server session, the AddressSanitizer, UndefinedBehaviorSanitizer and LeakSanitizer report counts were all 0 ("No sanitizer errors observed") while a client was connected and enemies and projectiles were active.
 - Dedicated server builds running on Linux, for cross-platform validation.
 
 ## What Failed
@@ -63,6 +81,7 @@ C++, custom ECS engine, client–server networking, client-side prediction, serv
 
 ## Supporting evidence
 
+- Screenshot and screen recordings of the network diagnostics HUD and dedicated server (see [Demonstration](#demonstration))
 - Public demonstration and technical write-up: [LinkedIn post: C++ Multiplayer Engine | Networking & Server Infrastructure](https://www.linkedin.com/feed/update/urn:li:activity:7531700571842613249/)
 
 ## Source availability

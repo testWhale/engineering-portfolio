@@ -18,7 +18,9 @@ My engineering interests are C++ software development, computer networking, back
 
 My work covered real-time snapshot synchronisation, client-side prediction, server reconciliation, remote entity interpolation, an in-engine network diagnostics HUD, and automated testing. I validated it across 7 simulated network profiles. Under the harshest profile (about 548 ms RTT), local movement stayed predicted and stable at about 18 snapshots per second.
 
-[Read the technical case study →](projects/multiplayer-networking.md)
+<a href="projects/multiplayer-networking.md#demonstration"><img src="media/network-diagnostics-normal-vs-harsh.jpg" alt="Network diagnostics HUD: normal profile vs harsh profile (548 ms RTT)" width="520"></a>
+
+[Read the technical case study →](projects/multiplayer-networking.md) · [Watch the demo videos](projects/multiplayer-networking.md#demonstration)
 
 *Source availability: the original source repository is restricted from public distribution.*
 
@@ -30,6 +32,8 @@ I built a real-time telemetry GUI for the pilot, fed by an MPU-9250 IMU, an MS58
 
 - [SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard): Flask + Three.js pilot dashboard
 - [Real-Time-Object-Detection-using-YOLO11 (fork)](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11): credited upstream detection pipeline used for MAKO
+
+<a href="projects/mako-submarine.md#demonstration"><img src="media/mako-sensor-bench-prototype.jpg" alt="MAKO sensor bench prototype: Arduino Uno, sensor breakouts and LCD altitude readout" width="520"></a>
 
 [Read the technical case study →](projects/mako-submarine.md)
 

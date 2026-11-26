@@ -6,6 +6,12 @@
 
 MAKO is Singapore's and Southeast Asia's first human-powered submarine. I was the team's lead developer (submarine) and worked on its mechanical and electrical design. My software contributions were the pilot-facing telemetry dashboard and a computer-vision pipeline for finding underwater gates.
 
+## Demonstration
+
+![Bench prototype: Arduino Uno wired on a breadboard to GY-68 and GY-511 sensor breakout boards, driving a 16x2 LCD that reads "Altitude: 55.87"](../media/mako-sensor-bench-prototype.jpg)
+
+*An early bench prototype of the sensor-to-display path: an Arduino Uno reads two breakout boards on a breadboard, labelled GY-68 and GY-511 (commonly a BMP180 barometric pressure sensor and an LSM303 accelerometer/magnetometer), and shows a live altitude reading on a 16x2 LCD. The sensor set used in the submarine (MPU-9250, MS5837-30BA, RPM sensor) is listed under [My role and contributions](#my-role-and-contributions).*
+
 ## My role and contributions
 
 **My work**
@@ -59,6 +65,7 @@ Python, Flask, JavaScript, Three.js, lil-gui, glTF, Ultralytics YOLO11, OpenCV, 
 
 ## Supporting evidence
 
+- Photo of the sensor bench prototype (see [Demonstration](#demonstration))
 - [SubmarineDashboard repository](https://github.com/testWhale/SubmarineDashboard): source, architecture, setup verification and known limitations
 - [YOLO11 fork with MAKO notice](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11): credited upstream project and a description of the MAKO adaptation
 
