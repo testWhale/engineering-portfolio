@@ -49,7 +49,7 @@ Android OpenGL ES coursework normally runs only on a phone or an emulator, so a 
 ## What Happened
 
 - **All three demos run live in the browser:** [Assignment 1](https://testwhale.github.io/android-webgl-showcase/Assignment-1/) (shader primitives), [Assignment 2](https://testwhale.github.io/android-webgl-showcase/Assignment-2-3DFan/) (3D fan with a matrix-stack hierarchy), [Assignment 3](https://testwhale.github.io/android-webgl-showcase/Assignment-3/) (fan with Phong lighting, HUD and picking).
-- Every workflow run since 3 July 2026 has passed. The commit checked in this case study (`69c20b8`) passed the Pages, Desktop and Android workflows.
+- From 3 July to 26 Nov 2026 every workflow run passed, including all three workflows on commit `69c20b8`. On 26 Nov 2026 the Android workflow failed on a documentation-only commit (`a44be1c`) inside the `android-actions/setup-android` SDK set-up step. This is an open CI environment issue; the Pages and Desktop workflows passed, and the live demos redeployed.
 
 ## Technologies
 
