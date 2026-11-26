@@ -75,6 +75,9 @@ This exposed a limitation in predicting gameplay actions beyond standard movemen
 - Added **server reconciliation**: when an authoritative snapshot arrives, the client corrects its predicted state, which keeps the server as the source of truth.
 - Added **remote entity interpolation**, so other players move smoothly between the snapshots that do arrive.
 - Built the **diagnostics HUD and logging**, so corrections, underruns and bandwidth are visible during play rather than guessed at.
+- Integrated Dash into the authoritative spell request and simulation path.
+- Ensured **spell-induced movement** was handled by the authoritative server rather than exclusively by the local client.
+- Added **regression testing** to check movement consistency between the client and server.
 
 ## What Happened
 
@@ -82,6 +85,7 @@ This exposed a limitation in predicting gameplay actions beyond standard movemen
 - Validated across **7 simulated network profiles**.
 - At roughly **548 ms RTT** under the harsh profile, local movement stayed predicted and stable while syncing at about **18 snapshots per second**.
 - A dedicated server build runs on **Linux** under **systemd**.
+- The corrected implementation allowed Dash movement to remain consistent with authoritative server state, preventing reconciliation from incorrectly reversing accepted spell-induced movement.
 
 These results come from **simulated** network impairment in a studio project. They are not production-scale load testing.
 
