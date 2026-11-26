@@ -43,11 +43,16 @@ Three interactive C++ applications using OpenGL ES 3.0. Each one builds from a s
 
 [**▶ Try the live demonstrations**](https://testwhale.github.io/android-webgl-showcase/) · [Repository](https://github.com/testWhale/android-webgl-showcase) · [Read the technical case study →](projects/android-webgl.md)
 
+https://github.com/user-attachments/assets/4127fd25-f3e3-44e6-94d7-e6540bbf0e51
+
+
 ## Additional collaborative work
 
 ### Pirates Be Ballin (GAM150)
 
 A wave-based survival game in C++, built by a five-person DigiPen team. I was the team's **UI/UX lead**. This is supporting evidence of team development, not one of the three case studies.
+
+https://github.com/user-attachments/assets/ab73f796-e127-4a09-a688-dd3beaf349b1
 
 Between 9 March and 5 April 2026 I authored 70 commits on `main` and 8 pull requests, 6 of which were merged:
 
