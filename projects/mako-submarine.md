@@ -55,7 +55,7 @@ The pilot of a human-powered submarine is underwater and pedalling, with very li
 
 ## What Happened
 
-- The team achieved a **33% improvement over 2025** and placed **3rd at eISR 2026** in Best Run, Best Speed and Best Time.
+- The team placed **3rd at eISR 2026** in Best Run, Best Speed and Best Time.
 - The dashboard is public with verified setup instructions: [testWhale/SubmarineDashboard](https://github.com/testWhale/SubmarineDashboard).
 - The detection pipeline is a credited public fork: [testWhale/Real-Time-Object-Detection-using-YOLO11](https://github.com/testWhale/Real-Time-Object-Detection-using-YOLO11). My line/gate changes are not yet committed there, and no detection-accuracy or speed figures are claimed.
 
